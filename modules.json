@@ -1,0 +1,14 @@
+{
+    "modules": [{
+        "name": "module 1",
+        "version": "0.0.1",
+        "dir": "module1",
+        "startModule": "module1"
+    }, {
+        "name": "module 2",
+        "version": "0.0.1",
+        "dir": "module2",
+        "startModule": "module2"
+    }],
+    "mode": "development"
+}

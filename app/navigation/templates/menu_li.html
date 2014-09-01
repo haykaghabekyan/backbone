@@ -1,0 +1,14 @@
+<div class="nav-section-wrapper">
+    <div class="nav-item-wrapper header">
+        <a href="{{route}}">{{name}}</a>
+    </div>
+    {{#if children}}
+    <ul>
+        {{#each children}}
+        <li class="nav-item-wrapper">
+            <a href="{{this.route}}">{{this.name}}</a>
+        </li>
+        {{/each}}
+    </ul>
+    {{/if}}
+</div>

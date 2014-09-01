@@ -1,0 +1,15 @@
+[{
+    "name": "Module1",
+    "cls": "nav-heading",
+    "route": "#module1",
+    "priority": 20,
+    "style": "heading",
+    "children": [{
+        "name": "Users",
+        "route": "#module1/users",
+        "matches": "#module1/user"
+    }, {
+        "name": "Contacts",
+        "route": "#module1/contacts"
+    }]
+}]

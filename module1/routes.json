@@ -1,0 +1,5 @@
+{
+    "module1/users": "getUsers",
+    "user/search": "search",
+    "user/:id": "getUserById"
+}
