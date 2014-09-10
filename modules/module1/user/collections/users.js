@@ -6,7 +6,7 @@ define(function (require) {
     "use strict";
 
     var Backbone = require('backbone');
-    var User = require('module1/user/models/user');
+    var User = require('modules/module1/user/models/user');
 
     var Users = Backbone.Collection.extend({
         url: "user.php?users",

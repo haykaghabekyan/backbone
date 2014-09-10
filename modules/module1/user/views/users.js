@@ -7,10 +7,10 @@ define(function (require) {
 
     var Marionette = require('marionette');
 
-    var ItemView = require('module1/user/views/user');
+    var ItemView = require('modules/module1/user/views/user');
 
     var Users = Marionette.CompositeView.extend({
-        template: 'module1/user/templates/users.html',
+        template: 'modules/module1/user/templates/users.html',
         childView: ItemView,
         tagName: 'ul',
         childViewContainer: '.users'

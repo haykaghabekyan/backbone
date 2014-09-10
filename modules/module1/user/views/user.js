@@ -8,7 +8,7 @@ define(function (require) {
     var Marionette = require('marionette');
 
     var Users = Marionette.ItemView.extend({
-        template: 'module1/user/templates/user.html',
+        template: 'modules/module1/user/templates/user.html',
         tagName: 'li',
         attributes: {
             class: 'name'

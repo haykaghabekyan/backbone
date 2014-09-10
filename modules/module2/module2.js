@@ -18,14 +18,14 @@ define(function (require) {
                     var routes;
 
                     $.ajax({
-                        url: "module2/routes.json",
+                        url: "modules/module2/routes.json",
                         method: 'GET',
                         async: false,
                         success: function (data) {
                             routes = data;
                         },
                         error: function (jqXHR, textStatus, errorThrown) {
-                            require(['app'], function (app) {
+                            require(['starter'], function (app) {
                                 app.showError("Unable to load the routes. Error: " + errorThrown);
                             });
                         },

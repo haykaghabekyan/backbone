@@ -13,8 +13,7 @@ define(function (require) {
 
     _.extend(UserController.prototype, {
         getUsers: function () {
-            console.log('qaq');
-            require(['starter', 'module1/user/collections/users', 'module1/user/views/users'], function (app, Users, UserView) {
+            require(['starter', 'modules/module1/user/collections/users', 'modules/module1/user/views/users'], function (app, Users, UserView) {
                 var UsersCollection = new Users();
                 var UsersCollectionPromise = UsersCollection.fetch();
                 UsersCollectionPromise.done(function () {

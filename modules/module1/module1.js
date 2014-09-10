@@ -20,7 +20,7 @@ define(function (require) {
                     var jsonData;
 
                     $.ajax({
-                        url: 'module1/navigation.json',
+                        url: 'modules/module1/navigation.json',
                         method: 'GET',
                         async: false,
                         cache: false,
@@ -28,7 +28,7 @@ define(function (require) {
                             jsonData = data;
                         },
                         error: function (jqXHR, textStatus, errorThrown) {
-                            require(['app'], function (app) {
+                            require(['starter'], function (app) {
                                 app.showError('Unable to load the routes. Error: ' + errorThrown);
                             });
                         },
@@ -41,14 +41,14 @@ define(function (require) {
                     var routes;
 
                     $.ajax({
-                        url: 'module1/routes.json',
+                        url: 'modules/module1/routes.json',
                         method: 'GET',
                         async: false,
                         success: function (data) {
                             routes = data;
                         },
                         error: function (jqXHR, textStatus, errorThrown) {
-                            require(['app'], function (app) {
+                            require(['starter'], function (app) {
                                 app.showError('Unable to load the routes. Error: ' + errorThrown);
                             });
                         },
@@ -58,7 +58,7 @@ define(function (require) {
                     router.processAppRoutes(this, routes);
                 },
                 getUsers: function () {
-                    require(['module1/user/controllers/user_controller'], function (userController) {
+                    require(['modules/module1/user/controllers/user_controller'], function (userController) {
                         userController.getUsers();
                     });
                 },

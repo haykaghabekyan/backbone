@@ -45,7 +45,7 @@ define(function (require) {
 
                 modules.forEach(function (module) {
                     //console.log(module);
-                    location = [module.dir, '/', module.startModule].join('');
+                    location = ['modules', '/' ,module.dir, '/', module.startModule].join('');
                     //console.log('location: ' + location);
                     require([location], _.bind(loadModule, that, _.extend({}, module)));
                 });
