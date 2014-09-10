@@ -14,12 +14,8 @@ if(isset($_GET['users'])) {
 
     echo json_encode($users);
 } else {
-/*
-?>
-
-<iframe src="http://localhost/~haykaghabekyan/backbonejs/#users"></iframe>
-
-<?php
-*/
+    echo '{
+        "error": true
+    }';
 }
 ?>
