@@ -1,5 +1,5 @@
 /**
- * (C) COPYRIGHT APP FACTORY 2014
+ * (C) Created by Hayk Aghabekyan on 22/09/14.
  */
 define(function (require) {
     "use strict";
@@ -23,33 +23,31 @@ define(function (require) {
                 that.modulesLoaded += 1;
                 if (that.modulesToLoad === that.modulesLoaded) {
                     that.app.vent.trigger('ModulesLoaded');
-                    //console.log('triggered: ModulesLoaded');
                 }
             };
 
             $.ajax({
                 url: 'modules.json',
                 method: 'GET',
-                async: false,
+                async: true,
                 success: function (data) {
                     modules = data.modules;
+                    if (modules.length) {
+                        that.modulesToLoad = modules.length;
+
+                        modules.forEach(function (module) {
+                            location = ['modules', '/' ,module.dir, '/', module.startModule].join('');
+                            require([location], _.bind(loadModule, that, _.extend({}, module)));
+                        });
+                    } else {
+                        that.app.vent.trigger('ModulesLoaded');
+                    }
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
                     this.app.showError('Unable to load the products in Product Loader. Error: ' + errorThrown);
                 },
                 context: that
             });
-
-            if (modules) {
-                that.modulesToLoad = modules.length;
-
-                modules.forEach(function (module) {
-                    //console.log(module);
-                    location = ['modules', '/' ,module.dir, '/', module.startModule].join('');
-                    //console.log('location: ' + location);
-                    require([location], _.bind(loadModule, that, _.extend({}, module)));
-                });
-            }
         }
     });
 
