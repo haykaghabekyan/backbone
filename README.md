@@ -1,1 +1,1 @@
-## MODULAR BACKBONE.JS/MARIONETTE.js framework using jquery, require.js, handlebars.js, underscore.js
+## Modular backbone.js/marionette.js framework using jquery, require.js, handlebars.js, underscore.js
